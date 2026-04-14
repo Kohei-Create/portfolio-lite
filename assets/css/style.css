@@ -17,6 +17,7 @@
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
+    z-index: 1;
 }
 
 .about-container {
@@ -79,6 +80,7 @@
     min-width: 250px;
     padding: 1rem;
     border-radius: 100px;
+    z-index: 2;
 }
 
 .btn-txt {
@@ -90,6 +92,7 @@
     transition: .3s ease;
     position: relative;
     width: fit-content;
+    z-index: 3;
 }
 
 .btn-txt:hover,
