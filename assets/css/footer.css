@@ -119,7 +119,9 @@
     }
     
     .foot-logo-link {
+        display: block;
         gap: 0;
+        width: fit-content;
     }
 
     .central {
