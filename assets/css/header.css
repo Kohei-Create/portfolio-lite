@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+.header {
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: var(--header-height);
+    padding: 1em 3em;
+    align-items: center;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, .14);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.head-logo {
+    display: flex;
+    font-weight: 700;
+    align-items: flex-end;
+    gap: .5rem;
+    width: fit-content;
+}
+
+.head-logo-l {
+    font-size: clamp(20px, 5vw, 25px);/* 最小・推奨・最大 */
+}
+
+.head-logo-c {
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.head-logo-r {
+    font-size: clamp(20px, 5vw, 25px);/* 最小・推奨・最大 */
+}
+
+.box {
+    display: flex;
+    width: fit-content;
+}
+
+.site-logo {
+    display: flex;
+}
+
+.logo-left,
+.logo-right {
+    font-weight: 400;
+    font-size: 13px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.logo-right {
+    margin: 5px 5px 0;
+}
+
+.name-block {
+    display: flex;
+    gap: .5rem;
+}
+
+.first-name,
+.family-name {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-btn {
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 7px;
+    position: relative;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.nav-btn:hover,
+.nav-btn:focus {
+    background-color: #eee;
+}
+
+.nav-btn span {
+    background-color: #000;
+    position: absolute;
+    right: 10px;
+    left: 10px;
+    top: 21px;
+    width: 23px;
+    height: 2px;
+    transition: .25s ease;
+}
+
+.nav-btn span:nth-child(1) {
+    top: 14px;
+}
+
+.nav-btn span:nth-child(2) {
+    top: 21px;
+}
+
+.nav-btn span:nth-child(3) {
+    top: 28px;
+}
+
+.nav-toggle:checked+.nav-btn span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 21px;
+}
+
+.nav-toggle:checked+.nav-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle:checked+.nav-btn span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 21px;
+}
+
+
+.nav-overlay {
+    background-color: rgba(0, 0, 0, .2);
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .25s ease;
+    z-index: 200;
+}
+
+.nav-toggle:checked~.nav-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-list {
+    background-color: var(--bg-white);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding: 2em 0 0 2em;
+    gap: 2em;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    gap: 0;
+    width: 50%;
+    max-width: 420px;
+    list-style: none;
+    transform: scaleX(0);
+    transform-origin: right;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+    opacity: 0;
+    z-index: 400;
+}
+
+.nav-toggle:checked~.nav-list {
+    opacity: 1;
+    transform: scaleX(1);
+    pointer-events: auto;
+    transition-delay: .15s;
+}
+
+.nav-item {
+    padding-bottom: 1em;
+}
+
+.nav-item:last-child {
+    padding-bottom: 0;
+}
+
+.nav-link {
+    color: var(--main-color);
+    font-weight: 900;
+    font-family: arial;
+    font-size: 20px;
+    position: relative;
+}
+
+.nav-link::after {
+    background-color: currentColor;/* 親の色に合わせる */
+    position: absolute;/* 絶対値 */
+    content: "";/* 疑似要素の基本 */
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .3s ease;
+}
+
+.nav-link:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+@media screen and (min-width:768px) {
+
+    .nav {
+        margin-left: 0;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .nav-overlay {
+        display: none;
+    }
+
+    .nav-list {
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        position: static;
+        padding: 0;
+        gap: 2em;
+        width: auto;
+        list-style: none;
+        transform: none;
+        pointer-events: auto;
+        opacity: 1;
+        
+    }
+
+    .nav-item {
+        padding-bottom: 0;
+    }
+
+}

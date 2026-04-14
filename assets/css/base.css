@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+}
+
+:root {
+    --main-color: #333;
+    --accent-color: #00acee;
+    --bg-white: #fff;
+    --section-gap: 5rem;
+    --header-height: 72px;
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* base */
+
+body {
+    color: var(--main-color);
+    font-size: 15px;
+    font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", 
+    "Hiragino Sans", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    line-height: 1.5;
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: var(--header-height);
+}
+
+/* 
+style
+*/
+
+a {
+    display: block;
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+img {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+span {
+    display: block;
+}
