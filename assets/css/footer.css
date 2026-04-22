@@ -3,7 +3,7 @@
 .footer {
     display: flex;
     flex-direction: column-reverse;
-    text-align: left;
+    text-align: left;    
 }
 
 .central {
@@ -36,12 +36,12 @@
 }
 
 .foot-list {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 
 .foot-list1 {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .foot-item {
@@ -80,26 +80,28 @@
 
 @media screen and (min-width:768px) {
 
-.footer {
-    justify-content: center;
-    margin: 0 auto;
-}
+    .footer {
+        justify-content: center;
+        margin: 0 auto;
+    }
 
-.central {
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    gap: 8rem;
-}
+    .central {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        gap: 8rem;
+    }
 
-.map {
-    text-align: left;
-}
+    .map {
+        text-align: left;
+    }
 
-.foot-list,
-.foot-list1 {
-    display: block;
-    gap: 1rem;
+    .foot-list,
+    .foot-list1 {
+        display: block;
+        gap: 1rem;
+    }
+
 }
 
 @media screen and (min-width:1050px) {
@@ -107,7 +109,7 @@
     .footer {
         align-items: flex-start;
     }
-    
+
     .foot-logo-link {
         display: block;
         gap: 0;
